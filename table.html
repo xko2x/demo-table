@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Table with Search Column Feature</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<script>
+$(document).ready(function(){
+	// Activate tooltips
+	$('[data-toggle="tooltip"]').tooltip();
+    
+	// Filter table rows based on searched term
+    $("#search").on("keyup", function() {
+        var term = $(this).val().toLowerCase();
+        $("table tbody tr").each(function(){
+            $row = $(this);
+            var name = $row.find("td:nth-child(2)").text().toLowerCase();
+            console.log(name);
+            if(name.search(term) < 0){                
+                $row.hide();
+            } else{
+                $row.show();
+            }
+        });
+    });
+});
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">			
+            <div class="table-title">
+                <div class="row">
+					<div class="col-xs-6">
+						<h2>Ma5domen <b>Pasma</b></h2>
+					</div>
+                    <div class="col-xs-6">
+                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#qr-modal"><i class="material-icons">&#xE24D;</i> <span>QR Code</span></a>
+                        <div class="search-box">
+							<div class="input-group">								
+								<input type="text" id="search" class="form-control" placeholder="Search by Name">
+                                <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th style="width: 22%;">Ma5dom Name</th>
+                        <th>Points Count</th>
+                        <th>Last Updated</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>1</td>
+                        <td>kerolos sameh</td>
+                        <td>10</td>
+                        <td>Aug. 16, 2022, 1:36 p.m.</td>
+                        <td>
+                            <a href="user/1" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2</td>
+                        <td>nader nessim</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/2" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3</td>
+                        <td>ehab noshey</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/3" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>4</td>
+                        <td>felo  shoukry</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/4" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5</td>
+                        <td>tony kamel</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/5" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>6</td>
+                        <td>kerolos hany 1s</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/6" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>7</td>
+                        <td>remon youssef</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/7" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>8</td>
+                        <td>mina hany</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/8" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>9</td>
+                        <td>kerolos hany 3s</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 4:39 p.m.</td>
+                        <td>
+                            <a href="user/9" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>10</td>
+                        <td>yassa sobhey</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/10" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>11</td>
+                        <td>anton raafat</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/11" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>12</td>
+                        <td>bavly emad</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/12" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>13</td>
+                        <td>domadious hany</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/13" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>14</td>
+                        <td>mikhail nabil</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/14" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>15</td>
+                        <td>marven philip</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/15" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>16</td>
+                        <td>bavly ragy</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/16" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>17</td>
+                        <td>peter adel zakaria</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/17" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>18</td>
+                        <td>marslino maged</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/18" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>19</td>
+                        <td>ebram medhat</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/19" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>20</td>
+                        <td>mina george</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/20" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>21</td>
+                        <td>kerolos gerges</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/21" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>22</td>
+                        <td>youssef malak 3s</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/22" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>23</td>
+                        <td>marko saber</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/23" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>24</td>
+                        <td>adel sherif</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/24" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>25</td>
+                        <td>beshoy aymen</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/25" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>26</td>
+                        <td>george gehad</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/26" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>27</td>
+                        <td>youssef aymen kdry</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/27" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>28</td>
+                        <td>kerolos emad darbkaa</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/28" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>29</td>
+                        <td>kerolos hany lolla</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/29" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>30</td>
+                        <td>remon youssef 2s</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/30" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>31</td>
+                        <td>youssef adel 1s</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/31" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>32</td>
+                        <td>tony edward</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/32" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>33</td>
+                        <td>mario william</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/33" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>34</td>
+                        <td>peter ayman</td>
+                        <td>35</td>
+                        <td>Aug. 16, 2022, 4:05 p.m.</td>
+                        <td>
+                            <a href="user/34" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>35</td>
+                        <td>mina ezzat</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/35" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>36</td>
+                        <td>mina nabil</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/36" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>37</td>
+                        <td>mario samy</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/37" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>38</td>
+                        <td>ehab rafla</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/38" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>39</td>
+                        <td>john edward</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/39" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>40</td>
+                        <td>george magdy</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/40" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>41</td>
+                        <td>adel zakarya</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/41" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>42</td>
+                        <td>ehab ibrahim</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/42" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>43</td>
+                        <td>sherif shoukry</td>
+                        <td>0</td>
+                        <td>Aug. 16, 2022, 11:08 a.m.</td>
+                        <td>
+                            <a href="user/43" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        </td>
+                    </tr>
+                           
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</div>
+<div class="modal fade" id="qr-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Scan QR-Code</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>     
+</body>
+
+</html>
